@@ -1,3 +1,4 @@
+import 'package:e_commerce/screens/auth_screen.dart';
 import 'package:e_commerce/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: 75,
                   ),
                   MyButton(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AuthScreen()));
+                    },
                     text: "Let\'s Continue",
                     color: Color(0xffFFA451),
                   )
