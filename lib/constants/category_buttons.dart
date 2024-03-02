@@ -2,7 +2,8 @@ import 'package:e_commerce/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 class CategoryButton extends StatefulWidget {
-  const CategoryButton({super.key});
+  static String category = 'hottest';
+  CategoryButton({super.key});
 
   @override
   State<CategoryButton> createState() => _CategoryButtonState();
@@ -15,18 +16,27 @@ class _CategoryButtonState extends State<CategoryButton> {
   selectCategory1() {
     setState(() {
       isBold1 = !isBold1;
+      isBold2 = false;
+      isBold3 = false;
+      CategoryButton.category = 'hottest';
     });
   }
 
   selectCategory2() {
     setState(() {
       isBold2 = !isBold2;
+      isBold1 = false;
+      isBold3 = false;
+      CategoryButton.category = 'popular';
     });
   }
 
   selectCategory3() {
     setState(() {
       isBold3 = !isBold3;
+      isBold2 = false;
+      isBold1 = false;
+      CategoryButton.category = 'top';
     });
   }
 

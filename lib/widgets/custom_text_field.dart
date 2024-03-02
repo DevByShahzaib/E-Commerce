@@ -21,9 +21,9 @@ class MyTextField extends StatelessWidget {
           color: Color(0xffE5E5E5), borderRadius: BorderRadius.circular(10)),
       child: TextField(
         controller: controller,
-        textAlign: TextAlign.center,
+        // textAlign: TextAlign.center,
         decoration: InputDecoration(
-          prefixIcon: prefixIcon,
+          prefix: prefixIcon,
           hintText: hintText,
           border: InputBorder.none,
         ),

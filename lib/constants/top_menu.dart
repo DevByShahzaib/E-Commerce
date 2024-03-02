@@ -1,26 +1,31 @@
+import 'package:e_commerce/constants/basket_items.dart';
 import 'package:e_commerce/constants/constant.dart';
 import 'package:e_commerce/constants/dish_list.dart';
 import 'package:flutter/material.dart';
 
 class TopMenu extends StatelessWidget {
-  final List<Map<String, String>> menu = Dishes.dish;
   TopMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var all = [];
+    for (var categories in Dishes.highlightedItems.values) {
+      all.addAll(categories);
+      // print(all);
+    }
     return Container(
-      // color: Colors.amber,
       height: 220,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: menu.length,
+          itemCount: all.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TopMenuTitles(
-                name: menu[index]['name']!,
-                imgUrl: menu[index]['imgUrl']!,
-                price: menu[index]['price']!,
+                name: all[index]['name']!,
+                imgUrl: all[index]['imgUrl']!,
+                price: all[index]['price']!,
+                id: all[index]["id"]!,
               ),
             );
           }),
@@ -30,11 +35,15 @@ class TopMenu extends StatelessWidget {
 
 class TopMenuTitles extends StatefulWidget {
   TopMenuTitles(
-      {required this.name, required this.imgUrl, required this.price});
+      {required this.name,
+      required this.imgUrl,
+      required this.price,
+      required this.id});
 
   final String name;
   final String imgUrl;
   final String price;
+  final int? id;
   @override
   State<TopMenuTitles> createState() => _TopMenuTitlesState();
 }
@@ -76,7 +85,32 @@ class _TopMenuTitlesState extends State<TopMenuTitles> {
                   SizedBox(
                     width: 36,
                   ),
-                  Icon(Icons.add_circle)
+                  InkWell(
+                      onTap: () {
+                        // var productIndex = BasketItems.itemList.indexWhere(
+                        //     (element) => element["id"] == widget.id);
+                        int foundIndex = -1;
+                        for (var i = 0; i < BasketItems.itemList.length; i++) {
+                          var item = BasketItems.itemList[i];
+                          if (item["id"] == widget.id) {
+                            foundIndex = i;
+                            break;
+                          }
+                        }
+                        if (foundIndex == -1) {
+                          BasketItems.itemList.add({
+                            "id": widget.id,
+                            "name": widget.name,
+                            "price": widget.price,
+                            "imageUrl": widget.imgUrl,
+                            "quantity": 1
+                          });
+                          
+                        } else {
+                          BasketItems.itemList[foundIndex]["quantity"] += 1;
+                        }
+                      },
+                      child: Icon(Icons.add_circle))
                 ],
               )
             ],
