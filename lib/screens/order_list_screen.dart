@@ -373,7 +373,12 @@ class _OrderListScreenState extends State<OrderListScreen> {
                                                                                     padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),
                                                                                     child: InkWell(
                                                                                       onTap: () {
-                                                                                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                                                                                        Navigator.push(
+                                                                                            context,
+                                                                                            MaterialPageRoute(
+                                                                                                builder: (context) => HomeScreen(
+                                                                                                      name: UserName.userName,
+                                                                                                    )));
                                                                                       },
                                                                                       child: Container(
                                                                                         alignment: Alignment.center,

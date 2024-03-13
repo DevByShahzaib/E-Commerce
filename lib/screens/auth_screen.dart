@@ -1,3 +1,4 @@
+import 'package:e_commerce/constants/basket_items.dart';
 import 'package:e_commerce/screens/home_screen.dart';
 import 'package:e_commerce/widgets/buttons.dart';
 import 'package:e_commerce/widgets/custom_text_field.dart';
@@ -15,6 +16,7 @@ class _AuthScreenState extends State<AuthScreen> {
   TextEditingController nameController = TextEditingController();
   nameSaver() {
     userName = nameController.text;
+    UserName.userName = userName;
   }
 
   @override
