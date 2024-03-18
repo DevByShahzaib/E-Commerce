@@ -55,7 +55,7 @@ class _HighlightedItemsState extends State<HighlightedItems> {
               onTap: selectCategory2,
               width: 50,
               height: 30,
-              fontSize: selectedCategory == "popular" ? 14 : 11,
+              fontSize: selectedCategory == "popular" ? 13 : 11,
               fontWeight: selectedCategory == "popular"
                   ? FontWeight.bold
                   : FontWeight.normal,
@@ -75,7 +75,7 @@ class _HighlightedItemsState extends State<HighlightedItems> {
         ),
         Container(
           // color: Colors.amber,
-          height: 155,
+          height: 160,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: Dishes.highlightedItems[selectedCategory]!.length,

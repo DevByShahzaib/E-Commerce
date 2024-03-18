@@ -187,9 +187,9 @@ class _OrderListScreenState extends State<OrderListScreen> {
                                                     Padding(
                                                       padding:
                                                           const EdgeInsets.only(
-                                                              right: 183.0),
+                                                              right: 200.0),
                                                       child: Text(
-                                                        'Number we can call',
+                                                        'Number For Call',
                                                         style: TextStyle(
                                                             fontSize: 20),
                                                       ),
@@ -204,14 +204,14 @@ class _OrderListScreenState extends State<OrderListScreen> {
                                                       child: MyTextField(
                                                         hintText:
                                                             '  03252674265',
-                                                        customWidth: 400,
+                                                        customWidth: 380,
                                                       ),
                                                     )
                                                   ],
                                                 ),
                                               ),
                                               SizedBox(
-                                                height: 30,
+                                                height: 10,
                                               ),
                                               Row(
                                                 mainAxisAlignment:
@@ -367,7 +367,7 @@ class _OrderListScreenState extends State<OrderListScreen> {
                                                                                 Container(
                                                                                   margin: EdgeInsets.only(top: 24),
                                                                                   width: double.infinity,
-                                                                                  height: 118,
+                                                                                  height: 114,
                                                                                   decoration: BoxDecoration(color: Color(0xffFFA451), borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40))),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),

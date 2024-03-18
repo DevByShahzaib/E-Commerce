@@ -72,7 +72,7 @@ class _AddToBasketState extends State<AddToBasket> {
                   ),
                 ),
                 Positioned(
-                  top: 300,
+                  top: 276,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
